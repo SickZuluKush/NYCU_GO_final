@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>File</title>
+</head>
+<body>
+	<iframe src="{{.DATA}}" style="border:none;height:600px;width:100%;" title="file"></iframe><br>
+	<a href="{{.BROWSE}}">Browse</a><br>
+	<a href="/">Homepage</a>
+	
+	<form action="{{.COMMENT_URL}}" method="POST">
+		<label for="comment">Comment:</label>
+		<input type="text" id="comment" name="{{.COMMENT}}">
+		<input type="hidden" name="{{.FILE_INFO}}" value="{{.FILE}}">
+		<button type="submit">POST COMMENT</button>
+	</form>
+	
+	<form action="{{.DELETE_URL}}" method="POST">
+		<input type="hidden" name="{{.FILE_INFO}}" value="{{.FILE}}">
+		<button type="submit">DELETE FILE</button>
+	</form>
+	
+	<h3>COMMENTS:</h3>
+	{{range $i, $c := .COMMENTS}}
+	<p>{{$c}}</p>
+	{{end}}
+	
+</body>
+</html>

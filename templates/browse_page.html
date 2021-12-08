@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Browse</title>
+</head>
+<body>
+	{{range $i, $f := .FILES}}
+	<a href="{{$.BROWSE}}{{$f}}">{{$f}}</a><br>
+	{{end}}
+	
+	<br><a href="/">Homepage</a>
+</body>
+</html>

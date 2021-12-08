@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Upload File</title>
+</head>
+<body>
+	<form enctype="multipart/form-data" action="{{.UPLOAD}}" method="POST">
+		<input type="file" name="{{.FILENAME}}" />
+		<input type="submit" value="upload file" />
+	</form><br>
+	<a href="/">Homepage</a>
+</body>
+</html>
